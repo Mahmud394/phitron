@@ -5,10 +5,10 @@ int main()
 {
     int n;
     cin>>n;
-    int arr[n];
+    int a[n];
     for(int i=0;i<n;i++)
     {
-        cin>>arr[i];
+        cin>>a[i];
     }
     /*
     sort(stsrting , ending ) 
@@ -20,7 +20,7 @@ int main()
 
     for(int i=0;i<n;i++)
     {
-        cout<<arr[i]<<" ";
+        cout<<a[i]<<" ";
     }
 
     return 0;

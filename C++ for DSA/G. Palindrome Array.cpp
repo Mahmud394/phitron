@@ -1,25 +1,33 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-void reverseArray(int arr[], int n) {
-    int left = 0, right = n - 1;
-
-    while (left < right) {
-        swap(arr[left], arr[right]); // Swap elements at the pointers
-        left++;
-        right--;
+int main()
+{
+    int t;
+    cin>>t;
+	int arr[t]; 
+    for(int i=0;i<t;i++)
+    {
+        cin>>arr[i];
     }
-}
+	int n = sizeof(arr) / sizeof(arr[0]);
+int flag = 0;
 
-int main() {
-    int arr[] = {1, 2, 3, 4, 5};
-    int n = sizeof(arr) / sizeof(arr[0]);
+	
+	for (int i = 0; i <= n / 2 && n != 0; i++) {
 
-    cout << "Original array: ";
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
-    }
+		
+		if (arr[i] != arr[n - i - 1]) {
+			flag = 1;
+			break;
+		}
+	}
 
+	if (flag == 1)
+		cout << "NO";
+	else
+    cout << "YES";
 
-    return 0;
+	
+	return 0;
 }
