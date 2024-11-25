@@ -10,6 +10,7 @@ int main()
     int cnt=0;
     while(ss >> word)
     {
+        cout<<word<<" ";
         cnt++;
     }
     cout<<cnt<<endl;
