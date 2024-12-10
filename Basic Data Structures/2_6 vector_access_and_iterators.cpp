@@ -22,7 +22,12 @@ int main()
     // cout<<v[0];
     // cout<<v.front();
 
-    for(auto it=v.begin();it<v.end();it++)
+    // for(auto it=v.begin();it<v.end();it++)
+    // {
+    //     cout<<*it<<" ";
+    // }
+
+     for(auto it=v.end()-1;it>=v.begin();it--)
     {
         cout<<*it<<" ";
     }
