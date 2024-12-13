@@ -26,15 +26,15 @@ int main()
 {
     int n;
     cin>>n;
-    vector<int>arr(n);
+    vector<long long int>arr(n);
     for(int i=0;i<n;i++)  //O(N)
     {
         cin>>arr[i];
     }
-    vector<int>arr2(n);
+    vector<long long int>arr2(n);
     arr2[0]=arr[0];
     
-    for(int i=1;i<=n;i++)  //O(N)
+    for(int i=1;i<n;i++)  //O(N)
     {
         arr2[i]= arr[i]+arr2[i-1];
     }

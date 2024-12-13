@@ -9,6 +9,7 @@ int main()
     {
         cin>>a[i];
     }
+      sort(a,a+n);
     int x;
     cin>>x;
     int l=0;
