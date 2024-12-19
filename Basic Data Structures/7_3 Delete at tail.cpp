@@ -41,7 +41,20 @@ void print_linkedlist(Node* head)
 
 
 }
+void delete_at_tail(Node* &head,Node* &tail, int val)
+{
 
+    Node* temp= head;
+    for(int i=1;i<val;i++)
+    {
+        temp= temp->Next;
+    }
+   // Node* deletenode = temp->Next;
+    temp->Next= temp->Next->Next;
+  //  delete deletenode;
+  tail= temp;
+    
+}
 int main() 
 {
     Node* head= NULL;
@@ -55,9 +68,8 @@ int main()
         }
         Insert_at_tail(head,tail,val);
     }
-   
+     delete_at_tail(head,tail,3);
  print_linkedlist( head);
- 
  
 
 

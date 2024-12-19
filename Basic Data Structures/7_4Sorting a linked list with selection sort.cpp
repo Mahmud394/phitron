@@ -41,7 +41,21 @@ void print_linkedlist(Node* head)
 
 
 }
+void sort_linked_list(Node* head)
+{
+    for(Node* i=head;i->Next != NULL;i=i->Next)
+    {
+        for(Node* j=i->Next;j != NULL;j=j->Next)
+        {
+            if(i->value > j->value)
+            //if(i->value < j->value) 
+            {
+                swap(i->value,j->value);
+            }
 
+        }
+    } 
+}
 int main() 
 {
     Node* head= NULL;
@@ -55,9 +69,8 @@ int main()
         }
         Insert_at_tail(head,tail,val);
     }
-   
+  sort_linked_list(head);
  print_linkedlist( head);
- 
  
 
 
