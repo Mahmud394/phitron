@@ -1,5 +1,6 @@
 /*
-Question: Take a singly linked list as input and check if the linked list contains any duplicate value. You can assume that the maximum value will be 100.
+Question: Take a singly linked list as input and check if the linked list
+ contains any duplicate value. You can assume that the maximum value will be 100.
 
 
 Sample Input
