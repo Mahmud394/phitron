@@ -28,9 +28,15 @@ void print_Doubly_linkedlist_forward(Node* head)
     cout<<endl;
 
 }
-void insert_at_tail(Node* &tail,int val)
+void insert_at_tail(Node* &head,Node* &tail,int val)
 {
     Node* newNode = new Node(val);
+    if(head == NULL)
+    {
+        head = newNode;
+        tail= newNode;
+        return;
+    }
     tail->Next= newNode;
     newNode->prev= tail;
 
@@ -48,7 +54,7 @@ int main()
     
     a->Next=tail;
     tail->prev= a;
-insert_at_tail(tail,5);
+insert_at_tail(head,tail,5);
 print_Doubly_linkedlist_forward(head);
 
     return 0;

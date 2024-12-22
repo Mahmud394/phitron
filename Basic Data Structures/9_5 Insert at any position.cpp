@@ -28,19 +28,20 @@ void print_Doubly_linkedlist_forward(Node* head)
     cout<<endl;
 
 }
-void insert_at_head(Node* &head,Node* &tail,int val)
+void insert_at_any_pos(Node* &head,int idx,int val)
 {
     Node* newNode = new Node(val);
-     if(head == NULL)
+    
+    Node* temp = head;
+    for(int i=1;i<idx;i++)
     {
-        head = newNode;
-        tail= newNode;
-        return;
-    }
-    newNode->Next= head;
-    head->prev= newNode;
+        temp=temp->Next;
 
-    head= newNode;
+    }
+    newNode->Next= temp->Next;
+    temp->Next->prev= newNode;
+    temp->Next= newNode;
+        newNode->prev=temp;
 
 }
 int main() 
@@ -54,7 +55,7 @@ int main()
     
     a->Next=tail;
     tail->prev= a;
-insert_at_head(head,tail,5);
+insert_at_any_pos(head,2,60);
 print_Doubly_linkedlist_forward(head);
 
     return 0;

@@ -28,33 +28,34 @@ void print_Doubly_linkedlist_forward(Node* head)
     cout<<endl;
 
 }
-void insert_at_head(Node* &head,Node* &tail,int val)
+void insert_at_tail(Node* &head,Node* &tail,int val)
 {
     Node* newNode = new Node(val);
-     if(head == NULL)
+    if(head == NULL)
     {
         head = newNode;
         tail= newNode;
         return;
     }
-    newNode->Next= head;
-    head->prev= newNode;
+    tail->Next= newNode;
+    newNode->prev= tail;
 
-    head= newNode;
+    tail= newNode;
 
 }
 int main() 
 {
-     Node* head = new Node(10);
-    Node* a= new Node(20);
-    Node* tail = new Node(30);
-
-    head->Next= a;
-    a->prev= head;
-    
-    a->Next=tail;
-    tail->prev= a;
-insert_at_head(head,tail,5);
+     Node* head= NULL;
+    Node* tail=NULL;
+    int val;
+    while(true){
+        cin>>val;
+        if(val==-1)
+        {
+            break;
+        }
+        insert_at_tail(head,tail,val);
+    }
 print_Doubly_linkedlist_forward(head);
 
     return 0;
