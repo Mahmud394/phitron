@@ -1,7 +1,8 @@
 /*
 Problem Statement
 
-You will be given a linked list of integer values as input. You need to remove duplicate values from the linked list and finally print the linked list in ascending order.
+You will be given a linked list of integer values as input. You need to remove 
+duplicate values from the linked list and finally print the linked list in ascending order.
 
 Note: You need to solve this using STL List, otherwise you will not get marks.
 

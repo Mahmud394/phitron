@@ -1,7 +1,8 @@
 /*
 Problem Statement
 
-You need to take a doubly linked list of integer value as input. You need to tell if the doubly linked list forms a palindrome or not.
+You need to take a doubly linked list of integer value as input.
+ You need to tell if the doubly linked list forms a palindrome or not.
 
 Note: You need to solve this using Doubly Linked List, otherwise you will not get marks.
 
