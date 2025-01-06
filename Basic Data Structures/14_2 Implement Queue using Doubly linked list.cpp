@@ -1,5 +1,3 @@
-//Queue = First In First Out
-
 #include <bits/stdc++.h>
 using namespace std;
 class Node
@@ -7,10 +5,12 @@ class Node
 public:
     int val;
     Node *next;
+    Node *prev;
     Node(int val)
     {
         this->val = val;
         this->next = NULL;
+        this->prev = NULL;
     }
 };
 class myQueue
@@ -30,39 +30,37 @@ public:
             return;
         }
         tail->next = newNode;
+        newNode->prev = tail;
         tail = tail->next;
     }
-    void pop()  //O(1)
+    void pop()   //O(1)
     {
         sz--;
         Node *deleteNode = head;
         head = head->next;
-        delete deleteNode;
         if (head == NULL)
         {
             tail = NULL;
+            return;
         }
+        head->prev = NULL;
+        delete deleteNode;
     }
-    int front()
+    int front()   //O(1)
     {
         return head->val;
     }
-    int back()
-    {
-        return tail->val;
-    }
-    int size()
+    int size()  //O(1)
     {
         return sz;
     }
-    bool empty()
+    bool empty()  //O(!)
     {
         // if (sz == 0)
         //     return true;
         // else
         //     return false;
-
-        return head==NULL;
+        return head == NULL;
     }
 };
 int main()
@@ -76,7 +74,6 @@ int main()
         cin >> x;
         q.push(x);
     }
-    cout<<q.front()<<" "<<q.back()<<" "<<q.size()<<endl;
     while (!q.empty())
     {
         cout << q.front() << endl;
