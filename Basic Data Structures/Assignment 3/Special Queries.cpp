@@ -17,7 +17,8 @@ First line will contain .
 Next  lines will contain the commands.
 Constraints
 
-. Here |Name| means the length of the string and it will not contain any space. The string will contain only small English alphabets.
+. Here |Name| means the length of the string and it will not contain any space.
+ The string will contain only small English alphabets.
 Output Format
 
 For each time someone get out of the line, print his/her name. Print a new line after that.
