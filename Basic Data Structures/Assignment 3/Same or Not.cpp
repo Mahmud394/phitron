@@ -1,7 +1,9 @@
 /*
 Problem Statement
 
-There is a list of  values that were inserted into a stack and a list of  values that were inserted into a queue. You need to determine whether the stack and queue are the same or not based on the order in which the elements are removed.
+There is a list of  values that were inserted into a stack and a list of  
+ that were inserted into a queue. You need to determine whether the stack 
+ and queue are the same or not based on the order in which the elements are removed.
 
 Note: You need to solve it using  Stack and Queue only.
 
