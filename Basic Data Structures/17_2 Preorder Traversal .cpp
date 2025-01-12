@@ -15,7 +15,7 @@ class Node{
 
 };
 
-void preorder(Node* root)
+void preorder(Node* root)   // PreOrder : Root left right
 {
     if(root==NULL)
         return;
@@ -41,6 +41,6 @@ int main()
     b->right = e;
 
     preorder(root);
-    
+
     return 0;
 }
