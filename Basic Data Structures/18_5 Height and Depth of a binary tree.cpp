@@ -74,8 +74,8 @@ int get_height(Node* root)
 {
     if(root == NULL)
         return 0;
-    if(root->left==NULL && root->right==NULL)
-        return 0;
+    // if(root->left==NULL && root->right==NULL)
+    //     return 0;
     int l = get_height(root->left);
     int r = get_height(root->right);
     return max(l,r)+1;
