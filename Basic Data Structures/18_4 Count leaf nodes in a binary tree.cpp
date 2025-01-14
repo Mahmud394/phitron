@@ -90,6 +90,23 @@ long long leftSum(BinaryTreeNode<int> *root)
         sum += root->left->data;
 
     sum += leftSum(root->left);
+	sum += leftSum(root->right);
+  
+    return sum;
+}
+
+
+sum of right node
+
+long long leftSum(BinaryTreeNode<int> *root)
+{
+	long long int sum=0;
+	 if(root == NULL)
+        return 0;
+     if(root->right!=NULL)
+        sum += root->right->data;
+
+    sum += leftSum(root->left);
 	 sum += leftSum(root->right);
   
     return sum;
