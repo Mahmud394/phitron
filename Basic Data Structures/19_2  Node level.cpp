@@ -42,3 +42,74 @@ int nodeLevel(TreeNode<int>* root, int searchedValue)
             q.push({node->right, level + 1});
     }
 }
+/*
+// left view of binary tree
+
+vector<int> getLeftView(TreeNode<int> *root)
+{
+    vector<int>ans;
+    bool fre[3005]= {false};
+     queue<pair<TreeNode<int>*,int>>q;
+    if(root){
+        q.push({root,1});
+    }
+    while(!q.empty())
+    {
+        pair<TreeNode<int>*,int> parent = q.front();
+        q.pop();
+        TreeNode<int>* node = parent.first;
+        int level = parent.second;
+
+        if (fre[level] == false) {
+          ans.push_back(node->data);
+          fre[level] = true;
+        }
+
+        if(node->left)
+            q.push({node->left, level + 1});
+        if(node->right)
+            q.push({node->right, level + 1});
+    }
+    return ans;
+
+}
+*/
+
+/*
+//Diameter Of Binary Tree
+
+int mx;
+int get_height(TreeNode<int> *root)
+{
+    if(root == NULL)
+        return 0;
+    if(root->left==NULL && root->right==NULL)
+        return 1;
+    int l = get_height(root->left);
+    int r = get_height(root->right);
+    int d = l+r;
+    mx = max(mx,d);
+    return max(l,r)+1;
+}
+int diameterOfBinaryTree(TreeNode<int> *root){
+	mx =0;
+    int h =  get_height(root);
+    return mx; 
+}
+*/
+
+/*
+
+// Special Binary Tree.  (0 0r 2 child)
+
+bool isSpecialBinaryTree(BinaryTreeNode<int>* root)
+{
+    if (root == NULL)
+        return true;
+    if((root->left != NULL && root->right == NULL)  || (root->left == NULL && root->right != NULL))
+        return false;
+    bool l = isSpecialBinaryTree(root->left);
+    bool r = isSpecialBinaryTree(root->right);
+    
+    return (l && r);
+*/
