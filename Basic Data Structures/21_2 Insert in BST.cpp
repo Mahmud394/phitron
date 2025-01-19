@@ -57,25 +57,61 @@ Node* input_tree()
     }
     return root;
 }
-bool search(Node* root, int val)  // O(h)    H->Height
+void insert(Node* &root, int val)  // O(h)    H->Height
 {
     if(root==NULL)
-        return false;
-    if(root->value== val)
-        return true;
+        root = new Node(val);
+
     if(root->value > val)
-        return search(root->left,val);
+    {
+        if(root->left == NULL)
+            root->left = new Node(val);
+        else
+            insert(root->left, val) ;
+    }
+
+    //else if(root->value < val)
     else
-        return search(root->right,val);
+    {
+        if(root->right == NULL)
+            root->right = new Node(val);
+        else
+            insert(root->right, val) ;
+    }
+   
+}
+void levelorder(Node* root)
+{
+    if(root==NULL)
+    {
+        cout<<"No Tree"<<endl;
+        return;
+    }
+    queue<Node*>q;
+    q.push(root);
+    while(!q.empty())
+    {
+        
+        Node* f = q.front();
+        q.pop();
+
+        
+        cout<<f->value<<" ";
+
+       
+        if(f->left!=NULL)
+            q.push(f->left);
+        if(f->right!=NULL)
+            q.push(f->right);
+
+    }
+
 }
 int main() 
 {
     Node* root =  input_tree();
     int val;
     cin>>val;
-    if(search(root,val))
-        cout<<"Found"<<endl;
-    else
-        cout<<"Not Found"<<endl;
-    return 0;
+    insert(root,val);
+    levelorder(root);
 }
