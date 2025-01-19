@@ -57,7 +57,7 @@ Node* input_tree()
     }
     return root;
 }
-void insert(Node* &root, int val)  // O(h)    H->Height
+void insert(Node* &root, int val)  // O(h)    H->Height  ,  n node insert = O(nh)
 {
     if(root==NULL)
         root = new Node(val);
