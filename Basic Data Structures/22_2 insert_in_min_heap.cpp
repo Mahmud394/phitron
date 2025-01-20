@@ -15,7 +15,7 @@ int main()
     cin>>val;
     v.push_back(val);
     int cur_idx = v.size()-1;
-    while (cur_idx != 0)
+    while (cur_idx != 0)   //for one->O(log N)    for more-> O(NlogN)
     {
         int parent_idx = (cur_idx - 1) / 2;
         if (v[parent_idx] > v[cur_idx])
