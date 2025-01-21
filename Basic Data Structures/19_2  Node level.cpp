@@ -146,3 +146,30 @@ bool isSpecialBinaryTree(BinaryTreeNode<int>* root)
     
     return (l && r);
 */
+
+/*
+//  Balanced Tree
+Definition of a Balanced Tree:
+For every node in the tree, the height difference between the left and 
+right subtrees is at most 1.
+
+class Solution {
+public:
+int height(TreeNode* root) {
+    if (!root) return 0;
+    return max(height(root->left), height(root->right)) + 1;
+}
+    bool isBalanced(TreeNode* root) {
+        if (!root) return true;
+
+    int leftHeight = height(root->left);
+    int rightHeight = height(root->right);
+    
+    if (abs(leftHeight - rightHeight) > 1) {
+        return false;
+    }
+
+    return isBalanced(root->left) && isBalanced(root->right);
+    }
+};
+*/
