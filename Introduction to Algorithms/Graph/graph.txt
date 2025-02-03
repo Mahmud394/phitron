@@ -21,7 +21,16 @@ Real life example of graph:
 2. Facebook mutual friend
 
 Input store graph:
-1. Adjacency Matrix
+1. Adjacency Matrix   
 2. Adjacency list
-3. Edge lish
+3. Edge list
 
+// chack 2 node connected or not:
+    1. Adjacency Matrix -> O(1) -> use this  
+    2. Adjacency list -> O(N)
+    3. Edge list  ->O(N) 
+// all the connected node from a node:
+    Adjacency lis ->use this
+
+// need all edge
+    Edge list ->use this
