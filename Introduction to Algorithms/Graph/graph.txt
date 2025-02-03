@@ -1,0 +1,27 @@
+Graph 
+1. multiple edge
+2. multiple way
+3. cycle
+4. edge driection 
+graph>>tree>Bt>Bst
+
+Types of Graph
+*Driection:
+	1.Directed
+	2.Undirected  
+*Weight:
+    1.Weighted
+    2.Unweighted
+*Cycle:
+    1.Cycle (Undirected  hole at lest 3 ta node lagbe  & Directed e 2 ta hole e hobe)
+    2.Acyclic  
+
+Real life example of graph:
+1. Google map shortcut way
+2. Facebook mutual friend
+
+Input store graph:
+1. Adjacency Matrix
+2. Adjacency list
+3. Edge lish
+
