@@ -48,6 +48,12 @@ int main()
     cin >> src >> dst;
     bfs(src);
 
+    // for(int i=0;i<n;i++)
+    // {
+    //     cout<<i<<"Parent ->"<<parent[i]<<endl;
+    // }
+    // cout<<level[dst]<<endl;
+
     vector<int> path;
     int node = dst;
     while(node != -1)
