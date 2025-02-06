@@ -34,3 +34,7 @@ Input store graph:
 
 // need all edge
     Edge list ->use this
+
+Traversal:
+1. BFS ->level wise short path 
+2. DFS  -> Depth-wish use any path
