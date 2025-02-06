@@ -38,3 +38,13 @@ Input store graph:
 Traversal:
 1. BFS ->level wise short path 
 2. DFS  -> Depth-wish use any path
+
+2D Grid:
+A 2D grid is a two-dimensional array of points or nodes that can be used 
+for a variety of purposes, including computer graphics, scientific calculations, and 
+representing sample spaces.
+
+up->i-1,j-> -1,0
+down->i+1,j -> 1,0
+left->i,j-1 -> 0,-1
+right->i,j+1 -> 0,1
