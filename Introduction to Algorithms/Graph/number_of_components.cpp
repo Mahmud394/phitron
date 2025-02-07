@@ -5,6 +5,7 @@ bool vis[1005];
 
 void dfs(int src)
 {
+    //cout<<src<<" ";
     vis[src] = true;
     for(int child : adj_list[src])
         if(!vis[child])
@@ -29,6 +30,7 @@ int main()
         if(vis[i]==false)
         {
             dfs(i);
+            //cout<<endl;
             cnt++;
         }
     }
