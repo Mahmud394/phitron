@@ -5,25 +5,17 @@ vector<int> adj_list[105];
 int parent[105];
 bool cycle;
 
-void bfs(int src)
+void dfs(int src)
 {
-    queue<int> q;
-    q.push(src);
     vis[src] = true;
-    while(!q.empty())
+    for(int child : adj_list[src])
     {
-        int par = q.front();
-        q.pop();
-        for(int child : adj_list[par])
+        if(vis[child] && parent[src]!=child)
+            cycle = true;
+        if(!vis[child])
         {
-            if(vis[child] && parent[par]!=child)
-                cycle = true;
-            if(!vis[child])
-            {
-                q.push(child);
-                vis[child] = true;
-                parent[child] = par;
-            }
+            parent[child] = src;
+            dfs(child);
         }
     }
 }
@@ -45,9 +37,12 @@ int main()
     for(int i=0;i<n;i++)
     {
         if(!vis[i])
-            bfs(i);
+            dfs(i);
     }
-    
+    // for(int i=0;i<n;i++)
+    // {
+    //     cout<<i<<" parent:  "<<parent[i]<<endl;
+    // }
     if(cycle)
         cout << "Cycle Detected\n";
     else

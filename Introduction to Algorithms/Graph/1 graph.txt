@@ -48,3 +48,11 @@ up->i-1,j-> -1,0
 down->i+1,j -> 1,0
 left->i,j-1 -> 0,-1
 right->i,j+1 -> 0,1
+
+
+Cycle Detection
+-Undirected: atlest 3 node 
+	-BFS
+	-DFS
+-Directed: 2 node
+	-DFS
