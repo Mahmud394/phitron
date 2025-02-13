@@ -3,7 +3,7 @@ using namespace std;
 vector<pair<int,int>> adj_list[105];
 int dis[105];
 
-void dijkstra(int src)   //O(VlogV + ElogV) -> O(logV(V+E))
+void dijkstra(int src)   //O(VlogV + ElogV) -> O(logV(V+E))  || O(E+E(logV)) ->O(E(logV))
 {
     priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
     pq.push({0,src});
