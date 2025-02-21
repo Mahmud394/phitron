@@ -15,6 +15,7 @@ bool valid(int i, int j)
 
 void bfs(int si, int sj)
 {
+    
     queue<pair<int,int>> q;
     q.push({si,sj});
     vis[si][sj] = true;
