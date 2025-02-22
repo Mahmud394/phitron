@@ -13,6 +13,7 @@ bool valid(int i, int j)
     return true;
 }
 
+
 void bfs(int si, int sj)
 {
     
