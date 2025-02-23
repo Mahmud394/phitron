@@ -1,6 +1,9 @@
 /*
 Dijkstra Algoritm
 	-Single source shortest distance/path=sssp
+    -cycle working
+    - nagetive weight working 
+    - nagetive weight cycle not working
 implement - naive Approach
 */
 
