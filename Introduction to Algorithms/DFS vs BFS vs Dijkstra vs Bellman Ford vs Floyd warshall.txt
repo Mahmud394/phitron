@@ -1,0 +1,21 @@
+DFS -> O(V+E)  
+	-> Graph Traverse
+
+Single source shortest distance/path=sssp :
+	BFS -> O(V+E)
+		- weighted graph not working 
+
+	Dijkstra -> O(ElogV) -> adj_list
+		-cycle working
+		- nagetive weight working 
+		- nagetive weight cycle not working
+		- implement - naive Approach
+
+	Bellman- Ford->O(VE) -> edge_list
+		-cycle working
+		- nagetive weight working 
+		- nagetive weight cycle working
+
+All Pair Shortest Destance:
+	Floyd-Warshall -> O(V^3) -> adj_matrix
+		- Multiple source
