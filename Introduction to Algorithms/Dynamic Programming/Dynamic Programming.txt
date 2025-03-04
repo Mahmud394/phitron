@@ -1,0 +1,6 @@
+Dynamic Programming 
+ -> recursion + optimization
+
+DP :
+  - Top-down ->using recursion
+  - Botton-up -> using loop
