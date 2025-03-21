@@ -5,7 +5,8 @@ int dis[105];
 
 void dijkstra(int src)   //O(VlogV + ElogV) -> O(logV(V+E))  || O(E+E(logV)) ->O(E(logV))
 {
-    priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
+ 
+   priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
     pq.push({0,src});
     dis[src] = 0;
     while(!pq.empty())  //O(V)
