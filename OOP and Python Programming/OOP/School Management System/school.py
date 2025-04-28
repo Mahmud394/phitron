@@ -82,7 +82,7 @@ class School:
             for sub in value.subjects:
                 subject += f"{sub.name}\n"
         print(subject)
-        # All Teachers - Homework
+        
         # All Student Results
         print("Students Results")
         for key,value in self.classrooms.items():

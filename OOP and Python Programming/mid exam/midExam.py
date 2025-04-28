@@ -215,7 +215,7 @@ def main():
         else:
             print("Invalid choice.")
 
-main()
+
 
 
 # 8
@@ -308,7 +308,7 @@ def main():
         else:
             print("Invalid choice.")
 
-main()
+
 
 
 # 9
