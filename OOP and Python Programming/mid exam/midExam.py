@@ -214,7 +214,7 @@ def main():
         
         else:
             print("Invalid choice.")
-
+main()
 
 
 
@@ -307,7 +307,7 @@ def main():
         
         else:
             print("Invalid choice.")
-
+main()
 
 
 
