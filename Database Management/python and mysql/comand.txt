@@ -1,0 +1,8 @@
+open terminal -> cmd
+code .
+virtualenv environment_name
+myenv\Scripts\activate.bat
+pip list
+pip install mysql-connector-python
+pip list
+pip freeze > requirement.txt
