@@ -1,8 +1,8 @@
 open terminal -> cmd
 code .
 virtualenv environment_name
-myenv\Scripts\activate.bat
 pip list
+.\environment_name\Scripts\activate
 pip install mysql-connector-python
 pip list
 pip freeze > requirement.txt
