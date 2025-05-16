@@ -1,0 +1,65 @@
+SQL ASSIGNMENT -1
+Question 1 & 2: 
+a)
+CREATE TABLE Student (
+    StudentID INT PRIMARY KEY,
+    StudentName VARCHAR(50) NOT NULL,
+    DateOfBath DATE,
+	Age INT CHECK (Age > 10),
+    Email VARCHAR(100) UNIQUE
+);
+
+b)
+CREATE TABLE Library (
+    BookID INT PRIMARY KEY,
+    Title VARCHAR(100) UNIQUE,
+    Author VARCHAR(100),
+    StudentID INT,
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID)
+);
+c)
+CREATE TABLE Fees (
+    FeeID INT PRIMARY KEY,
+    StudentID INT,
+    Amount DECIMAL(10, 2),
+    DueDate DATE,
+    Paid BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID)
+);
+
+Question 3:
+	Difference Between Data and Information:
+
+
+
+
+Question 4:
+In MySQL, Update and Delete query wasn’t executing, what was the reason and how to run those query?
+
+	Ans:  SET SQL_SAFE_UPDATES = 0;  
+		SET SQL_SAFE_UPDATES = 1;  
+
+Question 5:
+		SELECT DISTINCT Department FROM Employee;
+
+Question 6:
+		SELECT LastName FROM Employee
+ORDER BY Age DESC;
+
+Question 7:
+SELECT LastName FROM Employee
+WHERE Age > 30 AND Department = 'Marketing';
+
+Question 8:
+SELECT * FROM Employee;
+
+Question 9:
+SELECT * FROM Employee
+WHERE FirstName LIKE '%son%' OR LastName LIKE '%son%';
+
+Question 10:
+SELECT * FROM Employee
+WHERE Department = 'Engineering';
+
+
+

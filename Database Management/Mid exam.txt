@@ -1,0 +1,215 @@
+Mid Term Exam
+
+Total Marks:100								    Date: 8-11-2024
+
+
+1
+Explain the difference between Primary Key and Foreign Key in SQL.
+
+2
+What is a Self Join? Provide an example using the employees table to list employees who share the same manager ID, showing only their first names and manager IDs.
+
+3
+Create a table of Employees which has the following fields
+Employee_Id
+First Name
+Last Name
+Date of Birth
+Department Id
+Salary
+
+Create a table Projects with the following fields:	
+Project ID
+Project Name
+Start Date
+End Date
+Budget
+
+Create a table Employee_Projects with the following fields:
+Employee ID	
+Project ID
+
+Ensure that each employee can work on multiple projects and a project can have multiple employees.
+
+Use dummydb in MySQL to answer the following questions: Link
+4
+Using the dummydb, write an SQL query to get the third-highest salary in the employees table.
+
+5
+Write a query to show the department names and the number of employees in each department.
+
+6
+Illustrate INNER JOIN, LEFT JOIN, RIGHT JOIN, and CROSS JOIN with examples using the employees and departments tables.
+
+7
+What is a Common Table Expression (CTE)? Write an example query using CTE to show the names of employees whose salary is higher than the average salary.
+
+8
+Write a query to display the names of employees who earn a salary less than the employee "Steven King".
+
+9
+Write a query to find the department names and the names of the managers for each department.
+
+10
+Write a query to display the names of all cities where departments are located.
+
+
+Mid Term Exam
+Question 1: 
+Primary Key: Uniquely identifies each record in a table. Cannot be NULL or duplicated.
+
+
+Foreign Key: A field in one table that refers to the Primary Key in another table, used to link tables together.
+
+Question 2: 
+A self join is a SQL operation where a table is joined with itself. It is used to compare rows within the same table or establish relationships between different rows in the same table.
+Example:
+SELECT 
+    e1.first_name AS employee1_first_name,
+    e2.first_name AS employee2_first_name,
+    e1.manager_id
+FROM 
+    employees e1
+JOIN 
+    employees e2 ON e1.manager_id = e2.manager_id
+WHERE 
+    e1.employee_id < e2.employee_id
+ORDER BY 
+    e1.manager_id, e1.first_name, e2.first_name;
+
+
+Question 3: 
+Employees table
+CREATE TABLE Employees (
+    Employee_id INT PRIMARY KEY,
+    First_Name VARCHAR(50) NOT NULL,
+    Last_Name VARCHAR(50) NOT NULL,
+    Date_of_Birth DATE,
+    Department_Id INT,
+    Salary DECIMAL(10, 2)
+);
+
+Projects table
+CREATE TABLE Projects (
+    Project_ID INT PRIMARY KEY,
+    Project_Name VARCHAR(100) NOT NULL,
+    Start_Date DATE,
+    End_Date DATE,
+    Budget DECIMAL(15, 2)
+);
+
+Employee Projects table
+CREATE TABLE Employee_Projects (
+    Employee_ID INT,
+    Project_ID INT,
+    PRIMARY KEY (Employee_ID, Project_ID),
+    FOREIGN KEY (Employee_ID) REFERENCES 
+    Employees(Employee_id) ,
+    FOREIGN KEY (Project_ID) REFERENCES Projects(Project_ID)
+);
+
+
+Question 4: 
+SELECT MAX(salary) 
+FROM employees
+WHERE salary < (SELECT MAX(salary) 
+				FROM employees 
+				WHERE salary < (SELECT MAX(salary) 
+								FROM employees)
+                                );
+
+
+
+Question 5: 
+SELECT d.department_name, COUNT(e.employee_id) AS number_of_employees
+FROM departments d
+LEFT JOIN employees e ON d.department_id = e.department_id
+GROUP BY d.department_name;
+
+Question 6: 
+INNER JOIN: Returns only matching rows from both tables.
+SELECT e.first_name, e.last_name, d.department_name
+FROM employees e
+INNER JOIN departments d ON e.department_id = d.department_id;
+
+LEFT JOIN: Returns all rows from the left table and matching rows from the right table .
+
+SELECT e.first_name, e.last_name, d.department_name
+FROM employees e
+LEFT JOIN departments d ON e.department_id = d.department_id;
+
+RIGHT JOIN: Returns all rows from the right table and matching rows from the left table.
+SELECT e.first_name, e.last_name, d.department_name
+FROM employees e
+RIGHT JOIN departments d ON e.department_id = d.department_id;
+
+CROSS JOIN: Returns the Cartesian product of both tables.
+SELECT e.first_name, e.last_name, d.department_name
+FROM employees e
+CROSS JOIN departments d
+
+
+
+Question 7:
+A Common Table Expression (CTE) is a temporary result set that you can reference within a SELECT, INSERT, UPDATE, or DELETE statement
+
+Example:
+WITH avg_salary AS (
+    SELECT AVG(salary) AS average_salary
+    FROM employees
+)
+SELECT first_name, last_name, salary
+FROM employees, avg_salary
+WHERE salary > avg_salary.average_salary
+
+
+Question 8:
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary < (SELECT salary 
+				FROM employees 
+               	 WHERE first_name = 'Steven' AND last_name   = 'King'
+                );
+
+
+
+
+Question 9:
+SELECT d.department_name, 
+    CONCAT(e.first_name, ' ', e.last_name) AS manager_name
+FROM departments d
+LEFT JOIN employees e ON d.manager_id = e.employee_id
+
+
+Question 10:
+SELECT DISTINCT l.city
+FROM departments d
+JOIN locations l ON d.location_id = l.location_id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
