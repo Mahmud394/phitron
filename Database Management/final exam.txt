@@ -1,0 +1,70 @@
+Final Exam
+
+Question 1:
+
+Question 2:
+INSERT INTO Enrollment (StudentID, CourseID, EnrollmentDate)
+SELECT 5, CourseID, CURRENT_DATE
+FROM Course
+ORDER BY Credits DESC
+LIMIT 1;
+
+Question 3:
+
+UPDATE Course
+SET InstructorID = 7
+WHERE CourseID = 3;
+
+Question 4:
+SELECT i.Name, SUM(c.Credits) AS TotalCredits
+FROM Instructor i
+JOIN Course c ON i.InstructorID = c.InstructorID
+GROUP BY i.InstructorID, i.Name
+ORDER BY TotalCredits DESC
+LIMIT 1;
+Question 5:
+SELECT S.StudentID, S.Name, COUNT(E.EnrollmentID) AS CourseCount
+FROM Student S
+JOIN Enrollment E ON S.StudentID = E.StudentID
+GROUP BY S.StudentID
+HAVING COUNT(E.EnrollmentID) > 2;
+
+Question 6:
+
+
+Question 7:
+
+GROUP BY is used to group rows that have the same values in specified columns. Often used with aggregate functions.
+
+
+Example: SUM(), AVG()
+SELECT CustomerID, COUNT(*) AS TotalOrders
+FROM Orders
+GROUP BY CustomerID;
+
+
+ORDER BY is used to sort the result set based on one or more columns.
+Example:
+SELECT * FROM Products
+ORDER BY Price DESC;
+
+Question 8:
+SELECT MAX(Salary) AS SecondHighestSalary
+FROM Instructor
+WHERE Salary < (SELECT MAX(Salary) 
+FROM Instructor
+);
+
+
+Question 9:
+CREATE TABLE Course (
+    CourseID INT PRIMARY KEY,
+    Title VARCHAR(100),
+    InstructorID INT,
+    FOREIGN KEY (InstructorID) REFERENCES Instructor(InstructorID) ON DELETE CASCADE
+);
+
+
+
+
+
