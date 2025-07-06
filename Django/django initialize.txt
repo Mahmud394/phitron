@@ -1,0 +1,45 @@
+Create Virtual Environment : 
+	python -m venv task_env
+	task_env\Scripts\activate
+	initialize Django : pip install Django
+project: django-admin startproject task_management .
+	text: python manage.py runserver
+
+
+Django’s architecture_ projects:
+__pycache__ : none
+__init__: it's a package
+asgi: it is a Django’s server . request handle 
+settings: it is main file . all connection and reletion works in this file
+wsgi: it is a Django’s server . request handle
+urls: working for url mapping 
+db: lite database . 
+
+MVT structure: 
+	Django project follow this model. 
+M = model -> working for data . data show/retribe
+V = view ->  write all logical oparation
+T = Template -> Template rander 
+
+Create Application: django-admin startapp tasks
+admin.py -> Django's admin panel customize / add model
+apps.py -> write AppConfig
+models.py -> database related work 
+test.py-> write test case
+views.py-> create all logical oparation
+
+## Add  Application name in settings's INSTALLED_APPS
+Then create view.....
+
+
+
+Generate Requirements.txt file:
+task_env\Scripts\activate
+pip list
+pip freeze > requirements.txt
+
+pip install -r requirements.txt
+
+
+
+
