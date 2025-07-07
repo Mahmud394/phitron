@@ -3,7 +3,8 @@ Create Virtual Environment :
 	task_env\Scripts\activate
 	initialize Django : pip install Django
 project: django-admin startproject task_management .
-	text: python manage.py runserver
+	task_env\Scripts\activate
+	python manage.py runserver
 
 
 Django’s architecture_ projects:
@@ -37,8 +38,36 @@ Generate Requirements.txt file:
 task_env\Scripts\activate
 pip list
 pip freeze > requirements.txt
-
 pip install -r requirements.txt
+
+
+Dynamic URLs ,Git Branching and Merging:
+task_env\Scripts\activate
+python manage.py runserver:
+git branch
+git branch dynamic_urls ->new branch create
+git branch
+git checkout dynamic_urls ->Switched to branch 'dynamic_urls'
+git add . 
+git commit -m '' 
+git checkout main -> back to main branch
+git merge dynamic_urls -> merge code to main 
+
+
+Going Back to a Specific Commit:
+git log --oneline -> copy commit id
+git checkout copy commit id
+git checkout -b temp-branch
+git branch
+git checkout main
+git restore --source=temp-branch .
+git add .
+git commit -m ''
+git push
+
+
+
+
 
 
 
