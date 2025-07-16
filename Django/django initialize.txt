@@ -2,7 +2,10 @@ Create Virtual Environment :
 	python -m venv task_env
 	task_env\Scripts\activate
 	initialize Django : pip install Django
-project: django-admin startproject task_management .
+project: 
+	django-admin startproject task_management .
+	django-admin startapp users
+	django-admin startapp tasks
 	task_env\Scripts\activate
 	python manage.py runserver
 
@@ -38,7 +41,7 @@ Generate Requirements.txt file:
 task_env\Scripts\activate
 pip list
 pip freeze > requirements.txt
-pip install -r requirements.txt
+pip install -r requirements.txt -> if needed
 
 
 Dynamic URLs ,Git Branching and Merging:
@@ -65,10 +68,63 @@ git add .
 git commit -m ''
 git push
 
+PostgreSQL in Django Setup:
+go to main project folder-> setting.py -> database then add postgresql connection in django.
+pip install psycopg-binary
+python manage.py migrate
 
 
+class to sql convert->
+python manage.py makemigrations
+python manage.py migrate
 
 
+Introduction to Django Shell:
+1.One to One
+python manage.py shell
+from tasks.models import Task
+t = Task(title="Low Priority Tasks",description="Hello",due_date="2025-08-12",) 
+>>> print(t.title)
+>>> t.save()
+task = Task.objects.get(id=1)
+task.title
+TaskDetiles.objects.create(task=task,assigned_to="Mahmud",priority="H") 
 
+2.Many to One
+python manage.py shell
+from tasks.models import Task
+Project.objects.create(name="Dummy Project",start_date="2024-4-22
+project = Project.objects.all() 
+project.first()
+project.first().id
+
+3.Many to Many
+>>> from tasks.models import Employee, Task
+>>> employee = Employee.objects.create(name="Mahmud", email="mahmud@gmail.com")
+task = Task.objects.create(title="New task",description="Employee task",due_date="2025-4-5")
+task.assigned_to.add(employee)
+employee1 = Employee.objects.get(id=1)
+task.assigned_to.add(employee1)
+task.assigned_to.all()
+
+4. Reverse Relationship:
+	1. taskdetails er under e ki ki task ase->
+from tasks.models import *
+task_detail = TaskDetails.objects.get(id=1)
+task_detail.task  
+task_detail.task.title
+task1 = Task.objects.get(id=1)
+task_detail.task 
+	2. Employee to task
+employee1 = Employee.objects.get(id=1)
+employee1.task_set  
+employee1.task_set.all()
+employee1.tasks.all()
+employee1.tasks.all().first()
+employee1.tasks.all().first().title
+
+
+Tailwind run:
+npm run watch:tailwind
 
 
